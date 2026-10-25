@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { loginUser } from '../services/auth';
-import bgLogin from '../assets/img/bg-login.svg';
+import AuthBanner from '../components/AuthBanner';   {/* Importancion de componentes reutilizables */}
+import InputField from '../components/InputField';
+import Button from '../components/Button';
 import logoNextvoto from '../assets/img/logo_nextvoto.png';
 
 export default function Login({ onLoginSuccess }) {
@@ -46,27 +48,21 @@ export default function Login({ onLoginSuccess }) {
           <p className="text-gray-400 text-lg mb-8">Ingresa tus datos para continuar con tu día.</p>
 
           <form onSubmit={handleSubmit} className="space-y-8">
-            <div>
-              <label className="block text-base font-semibold text-gray-700 mb-1">Correo electrónico</label>
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-4 py-4 border border-gray-200 rounded-xl outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-base"
-                placeholder="correo@ejemplo.com (Usa: emilys)"
-              />
-            </div>
+            <InputField 
+              label="Correo electrónico" 
+              type="text" 
+              value={username} 
+              onChange={(e) => setUsername(e.target.value)} 
+              placeholder="correo@ejemplo.com (Usa: emilys)" 
+            />
             
-            <div>
-              <label className="block text-base font-semibold text-gray-700 mb-1">Contraseña</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-4 border border-gray-200 rounded-xl outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-base"
-                placeholder="Introduce tu contraseña (Usa: emilyspass)"
-              />
-            </div>
+            <InputField 
+              label="Contraseña" 
+              type="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              placeholder="Introduce tu contraseña (Usa: emilyspass)" 
+            />
 
             <div className="flex justify-end">
               <a href="#" className="text-base font-semibold text-blue-600 hover:underline">
@@ -80,25 +76,18 @@ export default function Login({ onLoginSuccess }) {
               </div>
             )}
 
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full bg-blue-700 text-lg text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition-colors shadow-lg shadow-blue-700/30 disabled:opacity-70"
-            >
+            <Button type="submit" variant="primary" disabled={isLoading}>
               {isLoading ? 'Iniciando...' : 'Iniciar sesión'}
-            </button>
+            </Button>
             
             <div className="relative flex items-center justify-center mt-6">
               <hr className="w-full border-gray-200" />
               <span className="absolute bg-white px-3 text-base text-gray-400">o continúa con</span>
             </div>
 
-            <button
-              type="button"
-              className="w-full bg-white text-lg border border-gray-200 text-gray-700 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 mt-6"
-            >
+            <Button type="button" variant="secondary">
               <span className="text-blue-600 font-bold text-xl">G</span> Continuar con Google
-            </button>
+            </Button>
           </form>
 
           <p className="text-center text-base text-gray-500 mt-8">
@@ -107,28 +96,8 @@ export default function Login({ onLoginSuccess }) {
         </div>
       </div>
 
-      {/* Mitad Derecha: Panel Azul con tu imagen de fondo */}
-      <div 
-        className="hidden md:flex w-1/2 rounded-[2.5rem] relative overflow-hidden items-end p-16"
-        style={{ backgroundImage: `url(${bgLogin})`, backgroundSize: 'cover', backgroundPosition: 'center'}}
-      >
-    
-        <div className="absolute top-12 left-12 w-12 h-12 border-8 border-white/80 rounded-full"></div>
-
-        <div className="relative z-10 w-full">
-          <span className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-lg font-semibold tracking-widest border border-white/30 uppercase">
-            Tu Espacio
-          </span>
-          <h1 className="text-7xl font-bold text-white mt-6 mb-4 leading-tight">
-            Todo en un solo<br/>lugar.
-          </h1>
-          <div className="flex justify-between items-end text-blue-100 text-3xl">
-            <p className="max-w-lg drop-shadow-md">
-              Un espacio sencillo para organizarte, avanzar y hacer más cada día.
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Mitad Derecha: Panel Azul importado de componentes*/}
+      <AuthBanner />
 
     </div>
   );
