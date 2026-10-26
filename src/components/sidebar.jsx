@@ -1,17 +1,19 @@
-import logo from '../assets/logo1.png';
+import logo from '../assets/img/logo_nextvoto.png';
 
 const opciones = [
   { id: 'inicio', texto: 'Inicio' },
-  { id: 'productos', texto: 'Productos' },
+  { id: 'cuestionarios', texto: 'Mis cuestionarios' },
+  { id: 'metricas', texto: 'Métricas y Resultados' },
+  { id: 'alumnos', texto: 'Alumnos' },
   { id: 'configuracion', texto: 'Configuración' },
 ];
 
 export default function Sidebar({ activa, onChange, onLogout }) {
-  const base = 'text-left px-5 py-3 rounded-full font-semibold text-blue-700';
+  const base = 'text-left px-6 py-3 rounded-full text-sm font-medium text-blue-700';
 
   return (
-    <aside className="w-64 bg-white min-h-screen p-4 flex flex-col gap-2">
-      <img src={logo} alt="Next Voto" className="w-40 mx-auto mb-8" />
+    <aside className="w-64 bg-white min-h-screen p-5 flex flex-col gap-3">
+      <img src={logo} alt="Next Voto" className="w-40 mb-8" />
 
       {opciones.map((op) => (
         <button

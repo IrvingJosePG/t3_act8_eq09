@@ -1,12 +1,17 @@
-export async function getProductos() {
-  const res = await fetch('https://dummyjson.com/products?limit=0');
-  if (!res.ok) throw new Error('No se pudieron cargar los productos');
-  const data = await res.json();
-  return data.products;
+const BASE = 'https://dummyjson.com';
+
+async function pedir(ruta, mensajeError) {
+  const res = await fetch(BASE + ruta);
+  if (!res.ok) throw new Error(mensajeError);
+  return res.json();
 }
 
-export async function getCategorias() {
-  const res = await fetch('https://dummyjson.com/products/category-list');
-  if (!res.ok) throw new Error('No se pudieron cargar las categorías');
-  return res.json(); 
+export async function getCuestionarios() {
+  const data = await pedir('/todos?limit=0', 'No se pudieron cargar los cuestionarios');
+  return data.todos;
+}
+
+export async function getAlumnos() {
+  const data = await pedir('/users?limit=0&select=firstName,lastName,email,age,image,university', 'No se pudieron cargar los alumnos');
+  return data.users;
 }
