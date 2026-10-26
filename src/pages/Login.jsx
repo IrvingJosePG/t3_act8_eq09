@@ -3,7 +3,6 @@ import { loginUser } from '../services/auth';
 import AuthBanner from '../components/AuthBanner';   {/* Importancion de componentes reutilizables */}
 import InputField from '../components/InputField';
 import Button from '../components/Button';
-import logoNextvoto from '../assets/img/logo_nextvoto.png';
 
 export default function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
@@ -31,20 +30,15 @@ export default function Login({ onLoginSuccess }) {
   };
 
   return (
-    <div className="flex h-screen bg-white font-sans p-4 md:p-6">
+    <div className="flex min-h-screen bg-white font-sans p-4 md:p-6">
       
       {/* Mitad Izquierda: Formulario */}
-      <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-24 relative">
+      <div className="w-full md:w-1/2 flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-20 py-10 md:py-12">
         
-        {/* Logo top-left real */}
-        <div className="absolute top-4 left-8 md:top-8 md:left-12">
-           <img src={logoNextvoto} alt="Logo NextVoto" className="h-20 lg:h-40 w-auto object-contain" />
-        </div>
-
         {/* FORMULARIO  */}
         <div className="max-w-xl w-full mx-auto">
           <p className="text-blue-600 text-base font-bold tracking-widest uppercase mb-2">Inicio de sesión</p>
-          <h2 className="text-6xl font-extrabold text-gray-900 mb-2">¡Hola de nuevo!</h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-2">¡Hola de nuevo!</h2>
           <p className="text-gray-400 text-lg mb-8">Ingresa tus datos para continuar con tu día.</p>
 
           <form onSubmit={handleSubmit} className="space-y-8">

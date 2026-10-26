@@ -3,6 +3,7 @@ import logo from '../assets/img/logo_nextvoto.png';
 const opciones = [
   { id: 'inicio', texto: 'Inicio' },
   { id: 'cuestionarios', texto: 'Mis cuestionarios' },
+  { id: 'productos', texto: 'Productos (CRUD)' },
   { id: 'metricas', texto: 'Métricas y Resultados' },
   { id: 'alumnos', texto: 'Alumnos' },
   { id: 'configuracion', texto: 'Configuración' },
