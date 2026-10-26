@@ -1,12 +1,12 @@
+import { useState } from 'react';
 import Login from './pages/Login';
+import Sistema from './pages/Sistema';
 
 export default function App() {
-  const handleLogin = (user) => {
-    console.log("Datos del usuario logueado:", user);
-    alert(`¡Bienvenido ${user.firstName}! Inicio de sesión exitoso.`);
-  };
+  const [user, setUser] = useState(null);
 
-  return (
-    <Login onLoginSuccess={handleLogin} />
-  );
+  // Sin sesión solo se ve el login
+  if (!user) return <Login onLoginSuccess={setUser} />;
+
+  return <Sistema user={user} onLogout={() => setUser(null)} />;
 }
