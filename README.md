@@ -4,9 +4,9 @@ Proyecto React/Vite del equipo **09**. El inicio de sesión y la interfaz NextVo
 
 ## Integrantes
 
-- Integrante 1: **Sandoval Reyes Miguel** — login y despliegue.
+- Integrante 1: **Perez Gris Irving Jose** — login y despliegue.
 - Integrante 2: **Fernández López Jazmín** — sidebar, navbar y vistas iniciales.
-- Integrante 3: **[Completar con nombre real]** — paginación, URL y CRUD.
+- Integrante 3: **Sandoval Reyes Miguel** — paginación, URL y CRUD.
 
 ## APIs
 
@@ -52,7 +52,7 @@ npm run build
 
 Sube **el contenido** de `dist/` a la carpeta de Nginx configurada para `/t3_act8_eq09/`. Si Nginx utiliza el directorio `/var/www/html`, el destino habitual es `/var/www/html/t3_act8_eq09/` (comprueba antes la configuración de tu VPS). Para que los parámetros `?page=2&limit=20` funcionen no necesitas un router de servidor: se consumen directamente en la página React.
 
-**URL del VPS:** `http://IP_DE_SU_VPS/t3_act8_eq09/` (sustituir por la IP real).
+**URL del VPS:** `http://167.99.15.140/t3_act8_eq09/` (sustituir por la IP real).
 
 ## Organización del código
 
