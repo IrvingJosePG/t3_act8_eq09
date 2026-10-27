@@ -5,7 +5,7 @@ Proyecto React/Vite del equipo **09**. El inicio de sesión y la interfaz NextVo
 ## Integrantes
 
 - Integrante 1: **Sandoval Reyes Miguel** — login y despliegue.
-- Integrante 2: **[Completar con nombre real]** — sidebar, navbar y vistas iniciales.
+- Integrante 2: **Fernández López Jazmín** — sidebar, navbar y vistas iniciales.
 - Integrante 3: **[Completar con nombre real]** — paginación, URL y CRUD.
 
 ## APIs
